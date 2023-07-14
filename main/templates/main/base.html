@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" href="{% static 'common/bootstrap/css/bootstrap.min.css' %}">
+    {% block style %}{% endblock %}
+
+    {% block script %}{% endblock %}
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class=>
+                <ul class="navbar-nav mr-auto align-items-center">
+                    <li class="nav-item"><img src="{% static 'main/logo.png' %}" alt="logo du site"
+                                              class="navbar-brand mt-0 h1"></li>
+                    <li class="nav-item active">
+                        <a href="{% url 'main:candidater' %}" class="nav-link">Candater</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Payer</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {% block header %}{% endblock %}
+</header>
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+</body>
+</html>
